@@ -30,10 +30,10 @@ module.exports = {
               listStyle: 'none'
             },
             a: {
-              color: '#FFFFFF',
+              color: '#000000',
               textDecoration: 'none',
               '&:hover': {
-                color: '#000000',
+                color: '#999999',
                 textDecoration: 'underline'
               }
             }
@@ -42,7 +42,5 @@ module.exports = {
       }
     }
   },
-  plugins: [
-    require('@tailwindcss/typography')
-  ]
+  plugins: [require('@tailwindcss/typography')]
 }

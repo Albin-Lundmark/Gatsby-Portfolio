@@ -7,14 +7,14 @@ const ProjectCard = ({ project }) => {
 
   return (
     <li className='mt-3 mb-7'>
-      <div className=''>
+      <div className='flex flex-col text-nowrap'>
           <GatsbyImage
             image={image}
             alt={project.title}
-            className='h-full w-full object-cover rounded'
+            className='h-full w-full object-cover rounded-lg'
           />
             <Link to={`/projects/${project.slug}`}>{project.title}</Link>
-            <Link to={project.repo}>{`Code ${project.title}`}</Link>
+            <Link to={project.repo}>{`${project.title} Repo`}</Link>
             <Link to={project.preview}>{`Live preview`}</Link>
       </div>
     </li>

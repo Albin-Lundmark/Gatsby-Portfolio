@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       <Link></Link>
     </div>
   )

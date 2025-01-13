@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import { useState } from 'react'
 
 const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulMenuItemPortfolio {
@@ -35,27 +38,86 @@ const Menu = () => {
   }
 
   return (
-    <nav className='w-full h-fit-content px-5'>
-      <ul className='flex flex-row w-full justify-around overflow-x-hidden items-center'>
-        {sortedMenuItems &&
-          sortedMenuItems.map(menuItem => (
-            <li
-              key={menuItem.order}
-              className='my-5 mr-2 transition duration-300 hover:scale-105'
-            >
-              <Link
-                className='hover:bg-red-300 hover:text-black px-5 py-3 bg-red-900 text-white rounded'
-                to={
-                  menuItem.linkTo.slug === 'home'
-                    ? '/'
-                    : `/${menuItem.linkTo.slug}`
-                }
+    <nav
+      className='w-full fixed top-0 bg-emerald-100 z-50'
+      role='navigation'
+      aria-label='Main navigation'
+    >
+      <div className='h-16 px-5 flex items-center justify-between'>
+        {/* Hamburger icon for mobile menu */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className='md:hidden p-2 relative w-10 h-10'
+          aria-expanded={isOpen}
+          aria-controls='mobile-menu'
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
+          <div
+            className={`absolute top-2 rounded-sm w-9 h-0.5 bg-black transition-all duration-300 ease-in-out ${
+              isOpen ? 'bg-gray-500 w-7 rotate-45 translate-y-2' : ''
+            }`}
+          ></div>
+          <div
+            className={`absolute top-4 rounded-sm w-6 h-0.5 bg-black transition-all duration-300 ease-in-out ${
+              isOpen ? 'opacity-0' : ''
+            }`}
+          ></div>
+          <div
+            className={`absolute top-6 rounded-sm w-7 h-0.5 bg-black transition-all duration-300 ease-in-out ${
+              isOpen ? 'bg-gray-500 -rotate-45 -translate-y-2' : ''
+            }`}
+          ></div>
+        </button>
+
+        {/* Desktop Menu */}
+        <ul className='hidden md:flex flex-row w-full justify-around overflow-x-hidden items-center'>
+          {sortedMenuItems &&
+            sortedMenuItems.map(menuItem => (
+              <li
+                key={menuItem.order}
+                className='my-5 mr-2 transition duration-300 hover:scale-105'
               >
-                {menuItem.title}
-              </Link>
-            </li>
-          ))}
-      </ul>
+                <Link
+                  className='px-5 py-3 bg-emerald-100 text-black rounded-lg hover:bg-emerald-300 hover:underline hover:underline-offset-2'
+                  to={
+                    menuItem.linkTo.slug === 'home'
+                      ? '/'
+                      : `/${menuItem.linkTo.slug}`
+                  }
+                >
+                  {menuItem.title}
+                </Link>
+              </li>
+            ))}
+        </ul>
+
+        {/* Mobile Menu */}
+        <ul
+          className={`md:hidden ${
+            isOpen ? 'block' : 'hidden'
+          } absolute top-16 left-0 right-0 bg-emerald-100`}
+        >
+          {sortedMenuItems &&
+            sortedMenuItems.map(menuItem => (
+              <li
+                key={menuItem.order}
+                className='py-3 px-5 border-b border-emerald-200'
+              >
+                <Link
+                  className='block w-full text-black hover:bg-emerald-300'
+                  to={
+                    menuItem.linkTo.slug === 'home'
+                      ? '/'
+                      : `/${menuItem.linkTo.slug}`
+                  }
+                  onClick={() => setIsOpen(false)}
+                >
+                  {menuItem.title}
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
     </nav>
   )
 }
