@@ -7,8 +7,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Albins frontend portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
-    description: `Min portfolio sida`,
+    siteUrl: `https://albinlundmark.se`,
+    description: `A frontend portfolio made with Gatsby`,
     author: `Albin Lundmark`
   },
   plugins: [
