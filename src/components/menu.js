@@ -54,7 +54,7 @@ const Menu = () => {
         >
           <div
             className={`absolute top-2 rounded-sm w-9 h-0.5 bg-black transition-all duration-300 ease-in-out ${
-              isOpen ? 'bg-gray-500 w-7 rotate-45 translate-y-2' : ''
+              isOpen ? 'bg-gray-500 rotate-45 translate-y-2' : ''
             }`}
           ></div>
           <div
@@ -64,7 +64,7 @@ const Menu = () => {
           ></div>
           <div
             className={`absolute top-6 rounded-sm w-7 h-0.5 bg-black transition-all duration-300 ease-in-out ${
-              isOpen ? 'bg-gray-500 -rotate-45 -translate-y-2' : ''
+              isOpen ? 'w-9 bg-gray-500 -rotate-45 -translate-y-2' : ''
             }`}
           ></div>
         </button>
