@@ -1,7 +1,8 @@
-import { Link } from 'gatsby'
 import React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
+import LoadingScreen from '../components/loadingscreen'
+import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const IndexPage = () => {
@@ -22,6 +23,7 @@ const IndexPage = () => {
   const { heading, pageText } = pageData.contentfulPortfolioPage
   return (
     <Layout>
+      <LoadingScreen />
       <h1 className='font-heading text-gray-800'>{heading}</h1>
       {pageText && (
         <div
