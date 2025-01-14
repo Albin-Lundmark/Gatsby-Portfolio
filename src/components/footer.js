@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 const Footer = () => {
   return (
-    <div className='flex justify-center items-center'>
-      <Link></Link>
+    <div className='flex justify-center items-center gap-2'>
+      <a href='https://www.instagram.com'>Instagram</a>
+      <a href='https://www.instagram.com'>Instagram</a>
+      <a href='https://www.instagram.com'>Instagram</a>
     </div>
   )
 }
