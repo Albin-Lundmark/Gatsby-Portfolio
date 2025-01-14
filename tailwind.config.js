@@ -42,7 +42,8 @@ module.exports = {
               textDecoration: 'none',
               '&:hover': {
                 color: '#999999',
-                textDecoration: 'underline'
+                textDecoration: 'underline',
+                cursor: 'pointer'
               }
             }
           }
