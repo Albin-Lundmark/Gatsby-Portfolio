@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/layout'
 import { useStaticQuery, graphql } from 'gatsby'
 import Seo from '../components/seo'
 import ProjectCard from '../components/project-card'
 
 const PortfolioPage = () => {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.history.scrollRestoration) {
+      // Allow browser to handle scroll restoration on back/forward navigation
+      window.history.scrollRestoration = 'auto'
+      // Only scroll to top on initial page load
+      if (window.location.hash === '') {
+        window.scrollTo(0, 0)
+      }
+    }
+  }, [])
+
   const projectData = useStaticQuery(graphql`
     query {
       contentfulPortfolioPage(title: { eq: "Portfolio" }) {
@@ -43,7 +54,7 @@ const PortfolioPage = () => {
   const projects = projectData.allContentfulPortfolioProjects.nodes.sort(
     (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
   )
-  
+
   return (
     <Layout>
       <h1 className='font-heading text-gray-800'>{heading}</h1>
