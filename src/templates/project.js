@@ -8,7 +8,6 @@ const ProjectTemplate = ({ data }) => {
   const gatsbyImage = projectImage.map(image => getImage(image))
   return (
     <Layout>
-      <h1>Enskilda projekt</h1>
       <h1>{title}</h1>
       {gatsbyImage &&
         gatsbyImage.map((image, index) => (

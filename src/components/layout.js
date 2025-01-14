@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
       <header className='mb-20'>
         <Menu />
       </header>
-      <main className='prose mx-3 md:mx-6 lg:mx-10'>{children}</main>
-      <footer>
+      <main className='max-w-full prose mx-3 md:mx-6 lg:mx-12'>{children}</main>
+      <footer className='max-w-full'>
         <Footer />
       </footer>
     </>

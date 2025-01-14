@@ -78,7 +78,7 @@ const Menu = () => {
                 className='my-5 mr-2 transition duration-300 hover:scale-105'
               >
                 <Link
-                  className='px-5 py-3 bg-emerald-100 text-black rounded-lg hover:bg-emerald-300 hover:underline hover:underline-offset-2'
+                  className='font-body text-xl px-5 py-3 bg-emerald-100 text-black rounded-lg hover:bg-emerald-300 hover:underline hover:underline-offset-2'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
@@ -104,7 +104,7 @@ const Menu = () => {
                 className='py-3 px-5 border-b border-emerald-200'
               >
                 <Link
-                  className='block w-full text-black hover:bg-emerald-300'
+                  className='block w-full font-body text-lg text-black hover:bg-emerald-300'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
