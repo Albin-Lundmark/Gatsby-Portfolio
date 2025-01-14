@@ -8,8 +8,8 @@ const ResumePage = ({ data }) => {
 
   return (
     <Layout>
-      <h1 className='font-mono text-gray-800'>Min CV-sida!</h1>
-      <h2 className='font-mono text-gray-800'>{pages && pages.resume.title}</h2>
+      <h1 className='text-gray-800'>Min CV-sida!</h1>
+      <h2 className='text-gray-800'>{pages && pages.resume.title}</h2>
     </Layout>
   )
 }

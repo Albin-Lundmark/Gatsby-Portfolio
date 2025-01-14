@@ -5,8 +5,8 @@ import Seo from '../components/seo'
 
 const IndexPage = () => (
   <Layout>
-    <h1>Min första gatsby sida!</h1>
-    <Link to='/projects'>Besök mina projekt!</Link>
+    <h1 className='font-heading'>Min första gatsby sida!</h1>
+    <Link to='/portfolio'>Besök mina projekt!</Link>
   </Layout>
 )
 
