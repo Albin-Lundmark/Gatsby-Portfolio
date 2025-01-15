@@ -6,7 +6,7 @@ const Menu = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allContentfulMenuItemPortfolio {
+      allContentfulMenuItemPortfolio(sort: { order: ASC }) {
         nodes {
           linkTo {
             slug
@@ -24,7 +24,6 @@ const Menu = () => {
   }
 
   const menuItems = data.allContentfulMenuItemPortfolio.nodes
-  const sortedMenuItems = menuItems.sort((a, b) => a.order - b.order)
 
   if (!menuItems || menuItems.length === 0) {
     console.error('No menu items found:', menuItems)
@@ -70,8 +69,8 @@ const Menu = () => {
 
         {/* Desktop Menu */}
         <ul className='hidden md:flex flex-row w-full justify-around overflow-x-hidden items-center'>
-          {sortedMenuItems &&
-            sortedMenuItems.map(menuItem => (
+          {menuItems &&
+            menuItems.map(menuItem => (
               <li
                 key={menuItem.order}
                 className='my-5 mr-2 transition duration-300 hover:scale-105'
@@ -96,8 +95,8 @@ const Menu = () => {
             isOpen ? 'block' : 'hidden'
           } absolute top-16 left-0 right-0 bg-emerald-100`}
         >
-          {sortedMenuItems &&
-            sortedMenuItems.map(menuItem => (
+          {menuItems &&
+            menuItems.map(menuItem => (
               <li
                 key={menuItem.order}
                 className='py-3 px-5 border-b border-emerald-200'
