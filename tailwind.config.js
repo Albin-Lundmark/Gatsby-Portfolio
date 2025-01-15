@@ -3,7 +3,8 @@ module.exports = {
   content: [
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
-    `./src/templates/**/*.{js,jsx,ts,tsx}`
+    `./src/templates/**/*.{js,jsx,ts,tsx}`,
+    `./src**/*.{js,jsx,ts,tsx}`
   ],
   theme: {
     extend: {
@@ -48,7 +49,19 @@ module.exports = {
             }
           }
         }
-      })
+      }),
+      animation: {
+        typing: 'typing 2s steps(20, end), blink .5s step-end infinite'
+      },
+      keyframes: {
+        typing: {
+          from: { width: '0%' },
+          to: { width: '100%' }
+        },
+        blink: {
+          '50%': { borderColor: 'transparent' }
+        }
+      }
     }
   },
   plugins: [require('@tailwindcss/typography')]

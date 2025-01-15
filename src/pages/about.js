@@ -1,11 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const AboutPage = () => {
-  const aboutData = graphql`
+  const aboutData = useStaticQuery(graphql`
     query {
       contentfulPortfolioPage(title: { eq: "About me" }) {
         title
@@ -21,7 +21,7 @@ const AboutPage = () => {
         }
       }
     }
-  `
+  `)
   const { heading, pageText } = aboutData.contentfulPortfolioPage
   const gatsbyImage = getImage(aboutData.heroImage)
 

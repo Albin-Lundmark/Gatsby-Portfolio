@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Seo from '../components/seo'
 
 const ResumePage = () => {
-  const resumeData = graphql`
+  const resumeData = useStaticQuery(graphql`
     query {
       contentfulPortfolioPage(title: { eq: "Resume" }) {
         title
@@ -17,9 +17,10 @@ const ResumePage = () => {
         }
       }
     }
-  `
+  `)
 
   const { heading, pageText } = resumeData.contentfulPortfolioPage
+  console.log(heading)
 
   return (
     <Layout>

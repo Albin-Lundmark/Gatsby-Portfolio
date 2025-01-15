@@ -4,7 +4,7 @@ import Footer from './footer'
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <html lang='en'>
       <header className='mb-20'>
         <Menu />
       </header>
@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <footer className='max-w-full'>
         <Footer />
       </footer>
-    </>
+    </html>
   )
 }
 
