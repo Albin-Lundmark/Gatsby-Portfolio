@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <li className='mx-auto mt-3 mb-7 pl-0'>
-      <div className='flex flex-col h-full md:h-auto shadow border-2 border-gray-200 rounded-lg p-3'>
+      <div className='flex flex-col min-h-fit md:h-auto shadow border-2 border-gray-200 rounded-lg p-3'>
         <Link
           className='text-center font-body font-semibold mb-2'
           to={`/projects/${project.slug}`}
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
             />
           ) : (
             <GatsbyImage
-              image={desktopImage}
+              image={desktopImage ? desktopImage : mobileImage}
               alt={project.title}
               className='h-full w-full object-cover rounded-lg'
             />
