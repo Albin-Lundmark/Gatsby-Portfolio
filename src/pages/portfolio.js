@@ -5,11 +5,12 @@ import Seo from '../components/seo'
 import ProjectCard from '../components/project-card'
 
 const PortfolioPage = () => {
+  // For some reason this page doesn't start unscrolled so needed to add a useEffect
+  // to make the page start from the top, added into the logic so that if a user
+  // goes back to this page via browser it scrolls to the position the user left from
   useEffect(() => {
     if (typeof window !== 'undefined' && window.history.scrollRestoration) {
-      // Allow browser to handle scroll restoration on back/forward navigation
       window.history.scrollRestoration = 'auto'
-      // Only scroll to top on initial page load
       if (window.location.hash === '') {
         window.scrollTo(0, 0)
       }
