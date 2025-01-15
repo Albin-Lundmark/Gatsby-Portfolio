@@ -38,7 +38,7 @@ const Menu = () => {
 
   return (
     <nav
-      className='w-full fixed top-0 bg-emerald-100'
+      className='w-full fixed top-0 bg-emerald-100 z-10'
       role='navigation'
       aria-label='Main navigation'
     >
