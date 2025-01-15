@@ -26,12 +26,12 @@ const LoadingScreen = () => {
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-gray-900 text-white z-50'>
-      <div className='text-center'>
-        <div className='font-mono text-lg mb-4'>
+      <div className='mx-4 md:mx-10 lg:mx-20'>
+        <div className='text-left font-mono text-lg mb-4'>
           {lineIndex >= 0 && (
             <>
-            <p>{`const firstName = "Albin";`}</p>
-            <p>{`const lastName = "Lundmark";`}</p>
+              <p>{`const firstName = "Albin";`}</p>
+              <p>{`const lastName = "Lundmark";`}</p>
               <p className='animate-typing overflow-hidden whitespace-nowrap border-r-4 border-green-500 pr-4'>
                 {`const education = "frontend-developer";`}
               </p>
@@ -39,7 +39,7 @@ const LoadingScreen = () => {
           )}
           {lineIndex >= 1 && (
             <p className='animate-typing overflow-hidden whitespace-nowrap border-r-4 border-green-500 pr-4'>
-              {`console.log("Loading Albins Portfolio");`}
+              {`console.log("Loading Albins Portfolio...");`}
             </p>
           )}
         </div>
