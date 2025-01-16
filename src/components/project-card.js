@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
         </h2>
         <Link
           aria-label={`View ${project.title} project`}
-          className='text-center font-body font-semibold mb-2 transition-transform duration-300 hover:scale-105'
+          className='text-center font-body font-semibold mb-2 transition-transform duration-300 hover:scale-105 hover:opacity-80'
           to={`/portfolio/project/${project.slug}`}
         >
           {isMobile ? (
