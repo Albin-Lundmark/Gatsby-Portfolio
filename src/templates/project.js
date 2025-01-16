@@ -8,8 +8,13 @@ const ProjectTemplate = ({ data }) => {
   const { title, projectImage, description, stack, preview, repo } =
     data.contentfulPortfolioProjects
 
-  const desktopImage = getImage(projectImage[0].gatsbyImageData)
-  const mobileImage = getImage(projectImage[1].gatsbyImageData)
+  const desktopImage = projectImage[0]
+    ? getImage(projectImage[0].gatsbyImageData)
+    : null
+  const mobileImage = projectImage[1]
+    ? getImage(projectImage[1].gatsbyImageData)
+    : null
+    
   return (
     <>
       <Seo title={title}></Seo>
