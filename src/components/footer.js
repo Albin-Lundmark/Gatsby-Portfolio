@@ -1,11 +1,52 @@
+import { useStaticQuery, graphql } from 'gatsby'
 import React from 'react'
+import { BsFacebook, BsInstagram, BsLinkedin, BsGithub } from 'react-icons/bs'
 
 const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulSocials {
+        nodes {
+          linkName
+          link
+        }
+      }
+    }
+  `)
+
+  const socials = data.allContentfulSocials.nodes
+
+  const getSocialIcon = linkName => {
+    switch (linkName.toLowerCase()) {
+      case 'instagram':
+        return (
+          <BsInstagram className='p-[0.2rem] text-white rounded-lg bg-gradient-to-tl from-yellow-400 via-red-500 to-purple-600' />
+        )
+      case 'facebook':
+        return <BsFacebook className='text-blue-600' />
+      case 'linkedin':
+        return <BsLinkedin className='text-blue-700' />
+      case 'github':
+        return <BsGithub className='text-black' />
+      default:
+        return null
+    }
+  }
+
   return (
-    <div className='flex justify-center items-center gap-2'>
-      <a href='https://www.instagram.com'>Instagram</a>
-      <a href='https://www.instagram.com'>Instagram</a>
-      <a href='https://www.instagram.com'>Instagram</a>
+    <div className='flex py-10 bg-emerald-100 justify-center items-center gap-4'>
+      <h2 className='text-2xl font-heading text-gray-800'>Follow me on:</h2>
+      {socials.map(social => (
+        <a
+          key={social.link}
+          href={social.link}
+          target='_blank'
+          rel='noreferrer'
+          className='text-3xl drop-shadow-md md:text-4xl hover:scale-110 transition-transform'
+        >
+          {getSocialIcon(social.linkName)}
+        </a>
+      ))}
     </div>
   )
 }

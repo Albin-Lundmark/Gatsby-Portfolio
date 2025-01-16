@@ -18,31 +18,30 @@ const AboutPage = () => {
         }
         heroImage {
           gatsbyImageData(placeholder: BLURRED, width: 800, layout: CONSTRAINED)
+          description
         }
       }
     }
   `)
-  const { heading, pageText } = aboutData.contentfulPortfolioPage
-  const gatsbyImage = getImage(aboutData.heroImage)
+  const { heading, pageText, heroImage } = aboutData.contentfulPortfolioPage
+  const gatsbyImage = getImage(aboutData.contentfulPortfolioPage.heroImage)
 
   return (
     <Layout>
       <h1 className='font-heading text-gray-800'>{heading}</h1>
-      <div className='about-content'>
-        {pageText?.html && (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: aboutData.pageText.childrenMarkdownRemark.html
-            }}
-          />
-        )}
-      </div>
-      {aboutData?.heroImage?.gatsbyImageData && (
+      {gatsbyImage && (
         <GatsbyImage
-          className='rounded-full w-48 h-48 mx-auto'
+          className='flex flex-grow rounded-full w-40 md:w-52 h-40 md:h-52 mx-auto mb-5'
           image={gatsbyImage}
-          alt={aboutData?.heroImage?.description || 'About me'}
+          alt={heroImage.description || 'About me'}
         />
+      )}
+      {pageText?.childrenMarkdownRemark[0]?.html && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: pageText.childrenMarkdownRemark[0].html
+          }}
+        ></div>
       )}
     </Layout>
   )
