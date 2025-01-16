@@ -28,7 +28,7 @@ const ResumePage = () => {
       <p
         className='prose max-w-none'
         dangerouslySetInnerHTML={{
-          __html: pageText.childrenMarkdownRemark.html
+          __html: pageText.childrenMarkdownRemark[0].html
         }}
       ></p>
     </Layout>
