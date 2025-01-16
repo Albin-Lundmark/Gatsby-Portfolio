@@ -37,7 +37,7 @@ const Menu = () => {
 
   return (
     <nav
-      className='w-full h-16 fixed top-0 bg-emerald-100 z-10'
+      className='w-full h-24 sticky bg-emerald-100 z-10'
       role='navigation'
       aria-label='Main navigation'
     >
@@ -73,7 +73,7 @@ const Menu = () => {
             menuItems.map(menuItem => (
               <li
                 key={menuItem.order}
-                className='my-5 transition duration-300 hover:scale-105'
+                className='my-6 transition duration-300 hover:scale-105'
               >
                 <Link
                   className='font-body text-xl px-5 py-3 bg-emerald-100 text-gray-800 hover:text-gray-600 rounded-lg hover:underline hover:underline-offset-2'
@@ -93,7 +93,7 @@ const Menu = () => {
         <ul
           className={`md:hidden ${
             isOpen ? 'block' : 'hidden'
-          } absolute top-16 left-0 right-0 bg-emerald-100`}
+          } absolute top-20 left-0 right-0 bg-emerald-100`}
         >
           {menuItems &&
             menuItems.map(menuItem => (
@@ -102,7 +102,7 @@ const Menu = () => {
                 className='py-3 px-5 border-b border-emerald-200'
               >
                 <Link
-                  className='block w-full font-body text-lg text-black hover:bg-emerald-300'
+                  className='block w-full font-body text-lg text-gray-800'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
