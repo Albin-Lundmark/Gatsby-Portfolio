@@ -11,11 +11,14 @@ const ProjectCard = ({ project }) => {
   return (
     <li className='mx-auto mt-3 mb-7 pl-0'>
       <div className='flex flex-col min-h-fit md:h-auto shadow border-2 border-gray-200 rounded-lg p-3'>
+        <h2 className='font-heading text-2xl -mt-1 mb-1 font-semibold text-center'>
+          {project.title}
+        </h2>
         <Link
-          className='text-center font-body font-semibold mb-2'
-          to={`/projects/${project.slug}`}
+          aria-label={`View ${project.title} project`}
+          className='text-center font-body font-semibold mb-2 transition-transform duration-300 hover:scale-105'
+          to={`/portfolio/project/${project.slug}`}
         >
-          <p className='font-body'>{project.title}</p>
           {isMobile ? (
             <GatsbyImage
               image={mobileImage ? mobileImage : desktopImage}
@@ -37,7 +40,9 @@ const ProjectCard = ({ project }) => {
               href={project.repo}
               rel='noreferrer'
               target='_blank'
-            >{`Github repo`}</a>
+            >
+              Github repo
+            </a>
           )}
           {project.preview && (
             <a
@@ -45,7 +50,9 @@ const ProjectCard = ({ project }) => {
               href={project.preview}
               rel='noreferrer'
               target='_blank'
-            >{`Live preview`}</a>
+            >
+              Live preview
+            </a>
           )}
         </div>
       </div>
