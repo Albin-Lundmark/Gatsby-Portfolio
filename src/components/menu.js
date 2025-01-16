@@ -28,7 +28,7 @@ const Menu = () => {
   if (!menuItems || menuItems.length === 0) {
     console.error('No menu items found:', menuItems)
     return (
-      <div>
+      <div className='font-body text-lg'>
         Error loading menu items, please contact me if you see this error
         message
       </div>
