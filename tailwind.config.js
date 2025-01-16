@@ -42,7 +42,7 @@ module.exports = {
               color: '#000000',
               textDecoration: 'none',
               '&:hover': {
-                color: '#999999',
+                color: '#9CA3AF',
                 textDecoration: 'underline',
                 cursor: 'pointer'
               }
@@ -64,5 +64,8 @@ module.exports = {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography')]
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ]
 }

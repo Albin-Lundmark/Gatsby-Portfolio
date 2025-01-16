@@ -68,15 +68,15 @@ const Menu = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className='hidden md:flex flex-row w-full justify-around overflow-x-hidden items-center'>
+        <ul className='hidden justify-center space-x-3 md:flex flex-row w-full overflow-x-hidden items-center'>
           {menuItems &&
             menuItems.map(menuItem => (
               <li
                 key={menuItem.order}
-                className='my-5 mr-2 transition duration-300 hover:scale-105'
+                className='my-5 transition duration-300 hover:scale-105'
               >
                 <Link
-                  className='font-body text-xl px-5 py-3 bg-emerald-100 text-black rounded-lg hover:bg-emerald-300 hover:underline hover:underline-offset-2'
+                  className='font-body text-xl px-5 py-3 bg-emerald-100 text-gray-800 hover:text-gray-600 rounded-lg hover:underline hover:underline-offset-2'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
