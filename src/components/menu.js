@@ -37,11 +37,11 @@ const Menu = () => {
 
   return (
     <nav
-      className='w-full fixed top-0 bg-emerald-100 z-10'
+      className='w-full h-16 fixed top-0 bg-emerald-100 z-10'
       role='navigation'
       aria-label='Main navigation'
     >
-      <div className='h-16 px-5 flex items-center justify-between'>
+      <div className='px-5 flex items-center justify-between'>
         {/* Hamburger icon for mobile menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
