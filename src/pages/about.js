@@ -28,7 +28,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <h1 className='font-heading text-gray-800'>{heading}</h1>
+      <h1 className='font-heading text-2xl md:text-4xl text-gray-800'>{heading}</h1>
       {gatsbyImage && (
         <GatsbyImage
           className='flex flex-grow rounded-full w-40 md:w-52 h-40 md:h-52 mx-auto mb-5'
