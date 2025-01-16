@@ -6,8 +6,7 @@ import LoadingScreen from './loadingscreen'
 const Layout = ({ children }) => {
   return (
     <>
-      <LoadingScreen />
-      <header className='mb-24'>
+      <header className='mb-10'>
         <Menu />
       </header>
       <main className='max-w-full prose mx-4 md:mx-12 lg:mx-24 xl:mx-32 2xl:mx-64'>
@@ -16,6 +15,7 @@ const Layout = ({ children }) => {
       <footer className='max-w-full'>
         <Footer />
       </footer>
+      <LoadingScreen />
     </>
   )
 }
