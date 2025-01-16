@@ -16,7 +16,7 @@ const Seo = ({ title }) => {
   `)
 
   return (
-    <head>
+    <>
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <meta name='description' content={data.site.siteMetadata.description} />
@@ -24,7 +24,7 @@ const Seo = ({ title }) => {
       <title>
         {title} | {data.site.siteMetadata.title}
       </title>
-    </head>
+    </>
   )
 }
 
