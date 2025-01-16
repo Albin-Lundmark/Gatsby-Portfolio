@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
           className='text-center font-body font-semibold mb-2'
           to={`/projects/${project.slug}`}
         >
-          {project.title}
+          <p className='font-body'>{project.title}</p>
           {isMobile ? (
             <GatsbyImage
               image={mobileImage}
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
         <div className='flex flex-col text-center gap-2'>
           {project.repo && (
             <a
-              className='text-body px-4 py-2 bg-emerald-100 hover:bg-emerald-200 hover:text-gray-800 rounded-lg'
+              className='font-body px-4 py-2 bg-emerald-100 hover:bg-emerald-200 hover:text-gray-800 rounded-lg'
               href={project.repo}
               rel='noreferrer'
               target='_blank'
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
           )}
           {project.preview && (
             <a
-              className='text-body px-4 py-2 hover:bg-gray-100 hover:text-gray-800 rounded-lg'
+              className='font-body px-4 py-2 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 rounded-lg'
               href={project.preview}
               rel='noreferrer'
               target='_blank'
