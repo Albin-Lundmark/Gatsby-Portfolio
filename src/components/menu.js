@@ -41,7 +41,7 @@ const Menu = () => {
       role='navigation'
       aria-label='Main navigation'
     >
-      <div className='px-5 flex items-center justify-between'>
+      <div className='h-full px-5 flex items-center justify-between'>
         {/* Hamburger icon for mobile menu */}
         <button
           onClick={() => setIsOpen(!isOpen)}
