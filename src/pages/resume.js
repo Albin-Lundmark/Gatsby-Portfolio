@@ -15,26 +15,44 @@ const ResumePage = () => {
             html
           }
         }
+        resume {
+          file {
+            url
+          }
+        }
       }
     }
   `)
 
-  const { heading, pageText } = resumeData.contentfulPortfolioPage
-  console.log(heading)
+  const { title, heading, pageText, resume } =
+    resumeData.contentfulPortfolioPage
 
   return (
-    <Layout>
-      <h1 className='font-heading text-gray-800'>{heading}</h1>
-      <p
-        className='prose max-w-none'
-        dangerouslySetInnerHTML={{
-          __html: pageText.childrenMarkdownRemark.html
-        }}
-      ></p>
-    </Layout>
+    <>
+      <Seo title={title}></Seo>
+      <Layout>
+        <h1 className='font-heading text-2xl md:text-4xl text-gray-800'>
+          {heading}
+        </h1>
+        <div
+          className='prose max-w-none'
+          dangerouslySetInnerHTML={{
+            __html: pageText.childrenMarkdownRemark[0].html
+          }}
+        ></div>
+        <div className='mt-10'>
+          <a
+            className='font-body text-lg text-emerald-600 hover:text-emerald-800'
+            href={resume.file.url}
+            target='_blank'
+            rel='noreferrer'
+          >
+            Checkout my resume &rarr;
+          </a>
+        </div>
+      </Layout>
+    </>
   )
 }
-
-export const Head = () => <Seo title='Resume'></Seo>
 
 export default ResumePage

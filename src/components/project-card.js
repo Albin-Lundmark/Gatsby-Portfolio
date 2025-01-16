@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <li className='mx-auto mt-3 mb-7 pl-0'>
-      <div className='flex flex-col min-h-fit md:h-auto shadow border-2 border-gray-200 rounded-lg p-3'>
+      <div className='flex flex-col min-h-fit w-72 sm:w-96 md:w-full md:h-auto shadow border-2 border-gray-200 rounded-lg p-3'>
         <h2 className='font-heading text-2xl -mt-1 mb-1 font-semibold text-center'>
           {project.title}
         </h2>
@@ -23,7 +23,7 @@ const ProjectCard = ({ project }) => {
             <GatsbyImage
               image={mobileImage ? mobileImage : desktopImage}
               alt={project.title}
-              className='h-full w-full object-cover rounded-lg'
+              className='h-auto w-52 sm:w-64 object-cover rounded-2xl border-double border-4 border-gray-200'
             />
           ) : (
             <GatsbyImage
@@ -33,7 +33,7 @@ const ProjectCard = ({ project }) => {
             />
           )}
         </Link>
-        <div className='flex flex-col text-center gap-2'>
+        <div className='flex flex-col mx-auto text-center w-52 sm:w-64 md:w-full gap-2'>
           {project.repo && (
             <a
               className='font-body px-4 py-2 bg-emerald-100 hover:bg-emerald-200 hover:text-gray-800 rounded-lg'
