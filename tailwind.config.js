@@ -31,7 +31,7 @@ module.exports = {
               fontFamily: theme('fontFamily.body'),
               fontSize: '1.125rem',
               fontWeight: '400',
-              lineHeight: '1.15rem'
+              lineHeight: '1.5rem'
             },
             ul: {
               listStyleType: 'none',
