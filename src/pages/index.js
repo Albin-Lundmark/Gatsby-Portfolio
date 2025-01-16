@@ -29,11 +29,11 @@ const IndexPage = () => {
         <div
           className='prose max-w-none'
           dangerouslySetInnerHTML={{
-            __html: pageText.childrenMarkdownRemark.html
+            __html: pageText.childrenMarkdownRemark[0].html
           }}
         />
       )}
-      <Link to='/portfolio'>Besök mina projekt!</Link>
+      <Link className='font-body' to='/portfolio'>Besök mina projekt!</Link>
     </Layout>
   )
 }
