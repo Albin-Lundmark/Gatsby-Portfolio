@@ -38,7 +38,8 @@ const Footer = () => {
       <h2 className='text-2xl font-heading text-gray-800'>Follow me on:</h2>
       {socials.map(
         social =>
-          social.linkName !== 'GitHub ITHS' && (
+          social.linkName !== 'GitHub ITHS' &&
+          social.linkName !== 'Gmail' && (
             <a
               key={social.link}
               href={social.link}

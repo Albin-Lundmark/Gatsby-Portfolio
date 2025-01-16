@@ -31,23 +31,24 @@ const ResumePage = () => {
     <>
       <Seo title={title}></Seo>
       <Layout>
-        <h1 className='font-heading text-2xl md:text-4xl text-gray-800'>
+        <h1 className='font-heading text-2xl text-center md:text-left md:text-4xl text-gray-800'>
           {heading}
         </h1>
         <div
-          className='prose max-w-none'
+          className='prose font-body max-w-none'
           dangerouslySetInnerHTML={{
             __html: pageText.childrenMarkdownRemark[0].html
           }}
         ></div>
         <div className='mt-10'>
           <a
+            aria-label='Link to resume'
             className='font-body text-lg text-emerald-600 hover:text-emerald-800'
             href={resume.file.url}
             target='_blank'
             rel='noreferrer'
           >
-            Checkout my resume &rarr;
+            Check out my resume &rarr;
           </a>
         </div>
       </Layout>

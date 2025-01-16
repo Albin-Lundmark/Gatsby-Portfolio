@@ -47,7 +47,7 @@ const PortfolioPage = () => {
 
   return (
     <Layout>
-      <h1 className='font-heading text-2xl md:text-4xl text-gray-800'>{heading}</h1>
+      <h1 className='font-heading text-2xl text-center md:text-left md:text-4xl text-gray-800'>{heading}</h1>
       <ul className='grid grid-cols-1 mt-0 mx-auto pl-0 md:grid-cols-2 lg:grid-cols-3 md:gap-5'>
         {projects.map(project => (
           <ProjectCard key={project.id} project={project} />
