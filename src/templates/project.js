@@ -25,20 +25,24 @@ const ProjectTemplate = ({ data }) => {
         <div className='container mx-auto px-4 py-8'>
           <div className='flex flex-col md:flex-row md:items-start md:gap-1'>
             <div className='md:w-1/2 gap-2 flex flex-row'>
-              <div className='aspect-w-16 aspect-h-9'>
-                <GatsbyImage
-                  image={mobileImage}
-                  alt={projectImage[1].description}
-                  className='object-cover rounded-lg'
-                />
-              </div>
-              <div className='aspect-w-16 aspect-h-9'>
-                <GatsbyImage
-                  image={desktopImage}
-                  alt={projectImage[0].description}
-                  className='object-cover rounded-lg'
-                />
-              </div>
+              {mobileImage && (
+                <div className='aspect-w-16 aspect-h-9'>
+                  <GatsbyImage
+                    image={mobileImage}
+                    alt={projectImage[1].description}
+                    className='object-cover rounded-lg'
+                  />
+                </div>
+              )}
+              {desktopImage && (
+                <div className='aspect-w-16 aspect-h-9'>
+                  <GatsbyImage
+                    image={desktopImage}
+                    alt={projectImage[0].description}
+                    className='object-cover rounded-lg'
+                  />
+                </div>
+              )}
             </div>
             <div className='mt-4 md:mt-0 md:w-1/2'>
               <h1 className='font-heading text-3xl font-semibold mb-4'>
