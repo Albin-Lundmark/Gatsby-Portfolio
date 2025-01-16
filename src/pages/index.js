@@ -42,7 +42,7 @@ const IndexPage = () => {
         )}
         {pageText && (
           <div
-            className='font-bold self-center max-w-none md:flex-1'
+            className='prose my-3 font-body self-center max-w-none md:flex-1'
             dangerouslySetInnerHTML={{
               __html: pageText.childrenMarkdownRemark[0].html
             }}
