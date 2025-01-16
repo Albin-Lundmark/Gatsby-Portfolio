@@ -24,7 +24,7 @@ const AboutPage = () => {
     }
   `)
   const { heading, pageText, heroImage } = aboutData.contentfulPortfolioPage
-  const gatsbyImage = getImage(aboutData.contentfulPortfolioPage.heroImage)
+  const gatsbyImage = getImage(heroImage)
 
   return (
     <Layout>
@@ -33,7 +33,7 @@ const AboutPage = () => {
         <GatsbyImage
           className='flex flex-grow rounded-full w-40 md:w-52 h-40 md:h-52 mx-auto mb-5'
           image={gatsbyImage}
-          alt={heroImage.description || 'About me'}
+          alt={heroImage.description || 'Image of Albin Lundmark'}
         />
       )}
       {pageText?.childrenMarkdownRemark[0]?.html && (
