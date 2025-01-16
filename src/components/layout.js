@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
       <header className='mb-24'>
         <Menu />
       </header>
-      <main className='max-w-full prose mx-3 md:mx-6 lg:mx-12'>{children}</main>
+      <main className='max-w-full prose mx-3 md:mx-10 lg:mx-10'>{children}</main>
       <footer className='max-w-full'>
         <Footer />
       </footer>
