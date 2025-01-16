@@ -41,7 +41,7 @@ const AboutPage = () => {
           dangerouslySetInnerHTML={{
             __html: pageText.childrenMarkdownRemark[0].html
           }}
-        ></div>
+        />
       )}
     </Layout>
   )
