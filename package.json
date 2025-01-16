@@ -20,6 +20,7 @@
   "dependencies": {
     "@fontsource/caveat": "^5.1.1",
     "@fontsource/quicksand": "^5.1.1",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
     "gatsby": "^5.14.0",
