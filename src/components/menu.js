@@ -73,7 +73,7 @@ const Menu = () => {
             menuItems.map(menuItem => (
               <li
                 key={menuItem.order}
-                className='my-5 mr-2 transition duration-300 hover:scale-105'
+                className='my-5 transition duration-300 hover:scale-105'
               >
                 <Link
                   className='font-body text-xl px-5 py-3 bg-emerald-100 text-black rounded-lg hover:bg-emerald-300 hover:underline hover:underline-offset-2'
