@@ -5,8 +5,10 @@ import Layout from '../components/layout'
 const NotFoundPage = () => {
   return (
     <Layout>
-      <h1>Den här sidan kunde inte hittas</h1>
-      <Link to='/'>Klicka här för att komma tillbaka till hemsidan</Link>
+      <div className='text-center'>
+        <h1 className='font-heading'>Hoppsan, nu hamnade du utanför mina sidor</h1>
+        <Link className='font-body' to='/'>Klicka här för att komma tillbaka till hemsidan</Link>
+      </div>
     </Layout>
   )
 }
