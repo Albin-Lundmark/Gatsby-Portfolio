@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
           <p className='font-body'>{project.title}</p>
           {isMobile ? (
             <GatsbyImage
-              image={mobileImage}
+              image={mobileImage ? mobileImage : desktopImage}
               alt={project.title}
               className='h-full w-full object-cover rounded-lg'
             />
