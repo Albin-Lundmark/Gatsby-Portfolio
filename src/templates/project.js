@@ -14,7 +14,7 @@ const ProjectTemplate = ({ data }) => {
   const mobileImage = projectImage[1]
     ? getImage(projectImage[1].gatsbyImageData)
     : null
-    
+
   return (
     <>
       <Seo title={title}></Seo>
@@ -28,25 +28,38 @@ const ProjectTemplate = ({ data }) => {
           &larr; Back to projects
         </Link>
         <div className='container mx-auto px-4 py-8'>
-          <div className='flex flex-col md:flex-row md:items-start md:gap-1'>
-            <div className='md:w-1/2 gap-2 flex flex-row'>
+          <div className='flex flex-col md:flex-row md:items-start md:gap-5'>
+            <div className='md:w-1/2 gap-2 flex flex-col items-center'>
               {mobileImage && (
-                <div className='aspect-w-16 aspect-h-9'>
-                  <GatsbyImage
-                    image={mobileImage}
-                    alt={projectImage[1].description}
-                    className='object-cover rounded-lg'
-                  />
+                <div className='w-full flex justify-center'>
+                  <div className='relative border-4 border-gray-800 bg-gray-800 rounded-[1rem] h-[300px] w-[148px]'>
+                    <div className='absolute top-1 left-1 right-1 bottom-1 rounded-[0.8rem] overflow-hidden bg-white'>
+                      <GatsbyImage
+                        image={mobileImage}
+                        alt={projectImage[1].description}
+                        className='object-cover w-full h-auto'
+                      />
+                    </div>
+                  </div>
                 </div>
               )}
               {desktopImage && (
-                <div className='aspect-w-16 aspect-h-9'>
-                  <GatsbyImage
-                    image={desktopImage}
-                    alt={projectImage[0].description}
-                    className='object-cover rounded-lg'
-                  />
+                <div className='w-full flex justify-center'>
+                <div>
+                  <div className='relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-t-lg h-[180px] w-[340px] md:h-[225px] md:w-[480px]'>
+                    <div className='rounded-lg overflow-hidden h-full w-full bg-white'>
+                      <GatsbyImage
+                        image={desktopImage}
+                        alt={projectImage[0].description}
+                        className='object-cover h-auto w-full'
+                      />
+                    </div>
+                  </div>
+                  <div className='relative mx-auto bg-gray-900 rounded-b-xl rounded-t-sm h-[17px] w-[320px] md:h-[21px] md:w-[480px]'>
+                    <div className='absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-gray-800'></div>
+                  </div>
                 </div>
+              </div>
               )}
             </div>
             <div className='mt-4 md:mt-0 md:w-1/2'>
