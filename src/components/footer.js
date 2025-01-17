@@ -34,27 +34,32 @@ const Footer = () => {
   }
 
   return (
-    <div className='flex pt-10 pb-12 bg-emerald-100 justify-center items-center gap-4'>
-      <h2 className='text-2xl font-heading text-gray-800'>Follow me on:</h2>
-      {socials.map(
-        social =>
-          social.linkName !== 'GitHub ITHS' &&
-          social.linkName !== 'Gmail' && (
-            <a
-              key={social.link}
-              href={social.link}
-              target='_blank'
-              rel='noreferrer'
-              className='relative group text-3xl drop-shadow-md md:text-4xl hover:scale-110 transition-transform'
-              aria-label={`Follow me on: ${social.linkName}`}
-            >
-              {getSocialIcon(social.linkName)}
-              <span className='absolute left-1/2 transform -translate-x-1/2 font-body text-xs text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                {social.linkName}
-              </span>
-            </a>
-          )
-      )}
+    <div className='flex flex-col pt-10 pb-12 bg-emerald-100 justify-center items-center gap-5'>
+      <div className='flex flex-row gap-4'>
+        <h2 className='text-2xl font-heading text-gray-800'>Follow me on:</h2>
+        {socials.map(
+          social =>
+            social.linkName !== 'GitHub ITHS' &&
+            social.linkName !== 'Gmail' && (
+              <a
+                key={social.link}
+                href={social.link}
+                target='_blank'
+                rel='noreferrer'
+                className='relative group text-3xl drop-shadow-md md:text-4xl hover:scale-110 transition-transform'
+                aria-label={`Follow me on: ${social.linkName}`}
+              >
+                {getSocialIcon(social.linkName)}
+                <span className='absolute left-1/2 transform -translate-x-1/2 font-body text-xs text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                  {social.linkName}
+                </span>
+              </a>
+            )
+        )}
+      </div>
+      <p className='text-base font-heading text-gray-600'>
+        Albin Lundmark &copy; {new Date().getFullYear()}
+      </p>
     </div>
   )
 }
