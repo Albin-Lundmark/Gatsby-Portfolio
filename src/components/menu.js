@@ -77,6 +77,7 @@ const Menu = () => {
               >
                 <Link
                   className='font-body text-xl px-5 py-3 bg-emerald-100 text-gray-800 hover:text-gray-600 rounded-lg hover:underline hover:underline-offset-2'
+                  activeClassName='underline'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
@@ -103,6 +104,7 @@ const Menu = () => {
               >
                 <Link
                   className='block w-full font-body text-lg text-gray-800'
+                  activeClassName='underline'
                   to={
                     menuItem.linkTo.slug === 'home'
                       ? '/'
