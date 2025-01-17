@@ -11,7 +11,7 @@ const NotFoundPage = () => {
           Oops, this page doesn't seem to exist yet
         </h1>
         <Link className='font-body text-emerald-600 hover:text-emerald-800' to='/'>
-          Click here to return to my homepage
+          &larr; Click here to return to my homepage
         </Link>
       </div>
     </Layout>
