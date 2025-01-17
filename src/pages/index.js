@@ -2,29 +2,11 @@ import React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { Link } from 'gatsby'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
-const IndexPage = () => {
-  const pageData = useStaticQuery(graphql`
-    query {
-      contentfulPortfolioPage(title: { eq: "Home" }) {
-        heading
-        slug
-        heroImage {
-          gatsbyImageData(placeholder: BLURRED, width: 800, layout: CONSTRAINED)
-          description
-        }
-        pageText {
-          childrenMarkdownRemark {
-            html
-          }
-        }
-      }
-    }
-  `)
-
-  const { heading, pageText, heroImage } = pageData.contentfulPortfolioPage
+const IndexPage = ({ data }) => {
+  const { heading, pageText, heroImage } = data.contentfulPortfolioPage
   const profileImage = getImage(heroImage.gatsbyImageData)
 
   return (
@@ -62,5 +44,23 @@ const IndexPage = () => {
   )
 }
 export const Head = () => <Seo title='Home'></Seo>
+
+export const query = graphql`
+  query {
+    contentfulPortfolioPage(title: { eq: "Home" }) {
+      heading
+      slug
+      heroImage {
+        gatsbyImageData(placeholder: BLURRED, width: 800, layout: CONSTRAINED)
+        description
+      }
+      pageText {
+        childrenMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

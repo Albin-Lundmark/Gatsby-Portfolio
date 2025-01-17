@@ -1,31 +1,10 @@
 import React from 'react'
 import Layout from '../components/layout'
-import { useStaticQuery, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Seo from '../components/seo'
 
-const ResumePage = () => {
-  const resumeData = useStaticQuery(graphql`
-    query {
-      contentfulPortfolioPage(title: { eq: "Resume" }) {
-        title
-        heading
-        slug
-        pageText {
-          childrenMarkdownRemark {
-            html
-          }
-        }
-        resume {
-          file {
-            url
-          }
-        }
-      }
-    }
-  `)
-
-  const { title, heading, pageText, resume } =
-    resumeData.contentfulPortfolioPage
+const ResumePage = ({ data }) => {
+  const { title, heading, pageText, resume } = data.contentfulPortfolioPage
 
   return (
     <>
@@ -55,5 +34,25 @@ const ResumePage = () => {
     </>
   )
 }
+
+export const query = graphql`
+  query {
+    contentfulPortfolioPage(title: { eq: "Resume" }) {
+      title
+      heading
+      slug
+      pageText {
+        childrenMarkdownRemark {
+          html
+        }
+      }
+      resume {
+        file {
+          url
+        }
+      }
+    }
+  }
+`
 
 export default ResumePage
