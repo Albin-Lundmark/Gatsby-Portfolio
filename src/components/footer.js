@@ -50,7 +50,7 @@ const Footer = () => {
                 aria-label={`Follow me on: ${social.linkName}`}
               >
                 {getSocialIcon(social.linkName)}
-                <span className='absolute left-1/2 transform -translate-x-1/2 font-body text-xs text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                <span className='absolute left-1/2 transform -translate-x-1/2 font-body text-xs text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-md'>
                   {social.linkName}
                 </span>
               </a>
