@@ -35,6 +35,7 @@ const IndexPage = () => {
       <div className='flex flex-col md:flex-row items-center justify-center md:items-start md:gap-8'>
         {profileImage && (
           <GatsbyImage
+            aria-label='Image of Albin Lundmark'
             className='rounded-full w-40 md:w-52 h-40 md:h-52 mb-5 md:mb-0'
             image={profileImage}
             alt={heroImage.description || 'Profile image'}
