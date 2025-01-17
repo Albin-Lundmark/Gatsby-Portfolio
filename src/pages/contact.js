@@ -15,10 +15,17 @@ const Contact = (/* { data } */) => {
 
   return (
     <Layout>
-        <h2 className='font-heading text-2xl md:text-4xl mb-6'>{title}</h2>
+      <h2 className='font-heading text-center md:text-left text-2xl md:text-4xl mb-6'>
+        {title}
+      </h2>
       <div className='max-w-2xl mx-auto'>
-        <p className='font-body mb-8 text-2xl font-semibold md:text-3xl text-gray-600'>{pageText}</p>
-        <p className='font-body mb-8 text-base font-semibold md:text-xl text-emerald-600'>This form is still in the works so send me an email or reach out on my socials instead</p>
+        <p className='font-body mb-8 text-2xl font-semibold md:text-3xl text-gray-600'>
+          {pageText}
+        </p>
+        <p className='font-body mb-8 text-base font-semibold md:text-xl text-emerald-600'>
+          This form is still in the works so send me an email or reach out on my
+          socials instead
+        </p>
 
         <form className='space-y-5' onSubmit={handleSubmit}>
           <div>
@@ -29,7 +36,7 @@ const Contact = (/* { data } */) => {
               Name:
             </label>
             <input
-            placeholder='John Doe'
+              placeholder='John Doe'
               type='text'
               id='name'
               required
@@ -44,7 +51,7 @@ const Contact = (/* { data } */) => {
               Email:
             </label>
             <input
-            placeholder='John.Doe@email.com'
+              placeholder='John.Doe@email.com'
               type='email'
               id='email'
               required
@@ -59,7 +66,7 @@ const Contact = (/* { data } */) => {
               Message:
             </label>
             <textarea
-            placeholder='Whats on your mind?'
+              placeholder='Whats on your mind?'
               id='message'
               required
               className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32'
