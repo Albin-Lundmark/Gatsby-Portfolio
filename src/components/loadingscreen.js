@@ -26,7 +26,7 @@ const LoadingScreen = () => {
 
   return (
     <div className='fixed inset-0 flex items-center justify-center bg-gray-900 text-white z-50'>
-      <div className='container mx-4 md:mx-10 lg:mx-20'>
+      <div className='container w-full md:w-fit'>
         <div className='text-left font-mono text-base md:text-lg mb-4'>
           {lineIndex >= 0 && (
             <>
