@@ -46,7 +46,7 @@ const ProjectTemplate = ({ data }) => {
               {desktopImage && (
                 <div className='w-full flex justify-center'>
                 <div>
-                  <div className='relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-t-lg h-[180px] w-[340px] md:h-[225px] md:w-[480px]'>
+                  <div className='relative mx-auto border-gray-800 bg-gray-800 border-[8px] rounded-t-lg h-[180px] w-[320px] md:h-[225px] md:w-[480px]'>
                     <div className='rounded-lg overflow-hidden h-full w-full bg-white'>
                       <GatsbyImage
                         image={desktopImage}
